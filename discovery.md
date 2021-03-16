@@ -136,6 +136,7 @@ Service:
   "url": "[unique URL to this service]",
   "description": "[human string]", ?
   "docsurl": "[URL reference for human documentation]", ?
+  "removaltime": "[RFC339 timestamp of when service will be removed]", ?
   "specversions": [ "[ce-specversion value]" + ],
   "subscriptionurl": "[URL to which the Subscribe request will be sent]",
   "subscriptionconfig": { ?
@@ -293,6 +294,27 @@ The following sections define the attributes that appear in a Service entity.
   - If present, MUST be a non-empty absolute URI
 - Examples:
   - `http://cloud.example.com/docs/blobstorage`
+
+##### removaltime
+
+- Type: `Timestamp`
+- Description: An [RFC3339][rfc3339] timestamp that indicates when the Service
+  will be deleted. The Service MUST NOT be deleted before this time but MAY
+  exist after this time. The presence of this attribute is an indication that
+  the Service is being deprecated and clients of the Discovery Endpoint are
+  expected to plan accordingly.
+
+  This specification makes no statement as to whether any existing subscription
+  will still be valid and usable after this date. However, it is expected that
+  new subscription requests after this date will likely be rejected.
+
+  Note that a Discovery Endpoint is not mandated to use this attribute in
+  advance of removing a Service, but is it RECOMMENDED that they do so.
+- Constraints:
+  - OPTIONAL
+  - If present, MUST be an [RFC339][rfc3339] timestamp
+- Examples:
+  - `2022-12-19T16:39:57-08:00`
 
 ##### specversions
 
@@ -887,3 +909,5 @@ The CloudDiscovery API does not place restrictions on implementation's choice of
 an authentication and authorization mechanism. While the list of entities
 returned from each query MAY differ, the format of the output MUST adhere to
 this specification.
+
+[rfc3339]: https://tools.ietf.org/html/rfc3339
