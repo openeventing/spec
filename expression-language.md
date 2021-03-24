@@ -60,8 +60,7 @@ transparency][referential-transparency-wiki]. The output of a CESQL expression e
 _false_, and it might include an error.
 
 The CloudEvents Expression Language doesn't support the handling of the data field of the CloudEvent instances, due to
-its polymorphic nature and complexity. We strongly encourage users that need this functionality use other more
-appropriate tools.
+its polymorphic nature and complexity. Users that need this functionality should use other more appropriate tools.
 
 ### 1.1. Conformance
 
@@ -124,8 +123,8 @@ string-literal ::= ( "'" ( [^'] | "\'" )* "'" ) | ( '"' ( [^"] | '\"' )* '"')
 literal ::= number-literal | boolean-literal | string-literal
 ```
 
-Because string literals can be either `''` or `""` delimited, in the former case, the `"` has to be escaped, while in
-the latter the `'` has to be escaped.
+Because string literals can be either `''` or `""` delimited, in the former case, the `'` has to be escaped, while in
+the latter the `"` has to be escaped.
 
 ### 2.3. Operators
 
@@ -182,7 +181,7 @@ The type system contains 3 _primitive_ types:
   32-bit, twos-complement encoding.
 - _Boolean_: A boolean value of "true" or "false".
 
-The [types defined in the CloudEvents specification][ce-type-system]-- URI, URI Reference, and Timestamp-- are represented as
+The [types defined in the CloudEvents specification][ce-type-system] (URI, URI Reference, and Timestamp) are represented as
 _String_.
 
 The type system also includes _Set_, which is an unordered collection of _Strings_ of arbitrary length. This type can
@@ -341,7 +340,7 @@ implicit cast.
 Implicit casts must follow the same semantics of their equivalent explicit cast functions, as defined in
 [Casting and type checking](#351-casting-and-type-checking) sub-paragraph.
 
-We define in this section an **ambiguous** operator/function as an operator/function that is overloaded with another
+This section defines an **ambiguous** operator/function as an operator/function that is overloaded with another
 operator/function definition with same symbol/name and arity but different parameter types.
 
 A CESQL engine MUST apply the following implicit casting rules in order:
