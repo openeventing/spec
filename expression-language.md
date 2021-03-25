@@ -60,7 +60,7 @@ transparency][referential-transparency-wiki]. The output of a CESQL expression e
 _false_, and it might include an error.
 
 The CloudEvents Expression Language doesn't support the handling of the data field of the CloudEvent instances, due to
-its polymorphic nature and complexity. Users that need this functionality should use other more appropriate tools.
+its polymorphic nature and complexity. Users that need this functionality SHOULD use other more appropriate tools.
 
 ### 1.1. Conformance
 
