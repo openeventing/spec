@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Core Types -->
+    <xs:simpleType name="CloudEventContextAttributeValueType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="B" /> <!-- Boolean -->
+            <xs:enumeration value="I" /> <!-- Integer -->
+            <xs:enumeration value="S" /> <!-- String -->
+            <xs:enumeration value="BI" /> <!-- Binary -->
+            <xs:enumeration value="U" /> <!-- URI -->
+            <xs:enumeration value="UR" /> <!-- URI Reference -->
+            <xs:enumeration value="T" /> <!-- Timestamp -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="CloudEventContextAttribute">
+        <xs:attribute name="n" type="xs:string" />
+        <xs:attribute name="v" type="xs:anySimpleType" />
+        <xs:attribute name="t" type="CloudEventContextAttributeValueType" />
+    </xs:complexType>
+
+    <xs:complexType name="CloudEventData">
+        <xs:choice>
+            <xs:element name="Bin" type="xs:base64Binary" />
+            <xs:element name="Txt" type="xs:string" />
+            <xs:element name="Xml">
+                <xs:complexType>
+                    <xs:sequence >
+                        <xs:any minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:complexType>
+
+    <!-- CloudEvent Envelope -->
+    <xs:element name="CloudEvent">
+        <xs:complexType>
+          
+            <xs:sequence>
+                <!-- The Context Attributes -->               
+                <xs:element name="Attr" type="CloudEventContextAttribute" minOccurs="3" maxOccurs="unbounded" />
+                <!-- Data -->
+                <xs:element name="Data" type="CloudEventData" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+
+            <!-- The specification version definition -->
+            <xs:attribute name="specver" type="xs:string" use="required"/>
+
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Batch Container -->
+    <xs:element name="CloudEventBatch">
+        
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="CloudEvent" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+        
+    </xs:element>
+
+</xs:schema>
