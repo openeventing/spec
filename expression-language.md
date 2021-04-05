@@ -53,8 +53,8 @@ manipulation.
 The language is not constrained to a particular execution environment, which means it might run in a source, in a
 producer, or in an intermediary, and it can be implemented using any technology stack.
 
-The CloudEvents Expression Language assumes the input always includes, but is not limited to, a single valid and 
-type-checked CloudEvent instance. An expression MUST NOT mutate the value of the input CloudEvent instance, nor any of 
+The CloudEvents Expression Language assumes the input always includes, but is not limited to, a single valid and
+type-checked CloudEvent instance. An expression MUST NOT mutate the value of the input CloudEvent instance, nor any of
 the other input values. The evaluation of an expression observes the concept of [referential
 transparency][referential-transparency-wiki]. The output of a CESQL expression evaluation is always a boolean _true_ or
 _false_, and it might include an error.
@@ -227,29 +227,29 @@ Corresponds to the syntactic rule `unary-operation`:
 
 Corresponds to the syntactic rule `binary-operation`:
 
-| Definition                              | Semantics                                                                                                 |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `x = y: Boolean x Boolean -> Boolean`   | Returns `true` if the values of `x` and `y` are equal                                                     |
-| `x != y: Boolean x Boolean -> Boolean`  | Same as `NOT (x = y)`                                                                                     |
-| `x <> y: Boolean x Boolean -> Boolean`  | Same as `NOT (x = y)`                                                                                     |
-| `x AND y: Boolean x Boolean -> Boolean` | Returns the logical and of `x` and `y`                                                                    |
-| `x OR y: Boolean x Boolean -> Boolean`  | Returns the logical or of `x` and `y`                                                                     |
-| `x XOR y: Boolean x Boolean -> Boolean` | Returns the logical xor of `x` and `y`                                                                    |
-| `x = y: Integer x Integer -> Boolean`   | Returns `true` if the values of `x` and `y` are equal                                                     |
-| `x != y: Integer x Integer -> Boolean`  | Same as `NOT (x = y)`                                                                                     |
-| `x <> y: Integer x Integer -> Boolean`  | Same as `NOT (x = y)`                                                                                     |
-| `x < y: Integer x Integer -> Boolean`   | Returns `true` if `x` is strictly less than `y`                                                           |
-| `x <= y: Integer x Integer -> Boolean`  | Returns `true` if `x` is less than or equal to `y`                                                        |
-| `x > y: Integer x Integer -> Boolean`   | Returns `true` if `x` is strictly greater than `y`                                                        |
-| `x >= y: Integer x Integer -> Boolean`  | Returns `true` if `x` is greater or equal to `y`                                                          |
-| `x * y: Integer x Integer -> Integer`   | Returns the product of `x` and `y`                                                                        |
-| `x / y: Integer x Integer -> Integer`   | Returns the truncated division of `x` and `y`. Returns `0` and raises an error if `y = 0`                 |
-| `x % y: Integer x Integer -> Integer`   | Returns the remainder of the truncated division of `x` and `y`. Returns `0` and raises an error if `y = 0`|
-| `x + y: Integer x Integer -> Integer`   | Returns the sum of `x` and `y`                                                                            |
-| `x - y: Integer x Integer -> Integer`   | Returns the difference of `x` and `y`                                                                     |
-| `x = y: String x String -> Boolean`     | Returns `true` if the values of `x` and `y` are equal                                                     |
-| `x != y: String x String -> Boolean`    | Same as `NOT (x = y)`                                                                                     |
-| `x <> y: String x String -> Boolean`    | Same as `NOT (x = y)`                                                                                     |
+| Definition                              | Semantics                                                                                                  |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `x = y: Boolean x Boolean -> Boolean`   | Returns `true` if the values of `x` and `y` are equal                                                      |
+| `x != y: Boolean x Boolean -> Boolean`  | Same as `NOT (x = y)`                                                                                      |
+| `x <> y: Boolean x Boolean -> Boolean`  | Same as `NOT (x = y)`                                                                                      |
+| `x AND y: Boolean x Boolean -> Boolean` | Returns the logical and of `x` and `y`                                                                     |
+| `x OR y: Boolean x Boolean -> Boolean`  | Returns the logical or of `x` and `y`                                                                      |
+| `x XOR y: Boolean x Boolean -> Boolean` | Returns the logical xor of `x` and `y`                                                                     |
+| `x = y: Integer x Integer -> Boolean`   | Returns `true` if the values of `x` and `y` are equal                                                      |
+| `x != y: Integer x Integer -> Boolean`  | Same as `NOT (x = y)`                                                                                      |
+| `x <> y: Integer x Integer -> Boolean`  | Same as `NOT (x = y)`                                                                                      |
+| `x < y: Integer x Integer -> Boolean`   | Returns `true` if `x` is strictly less than `y`                                                            |
+| `x <= y: Integer x Integer -> Boolean`  | Returns `true` if `x` is less than or equal to `y`                                                         |
+| `x > y: Integer x Integer -> Boolean`   | Returns `true` if `x` is strictly greater than `y`                                                         |
+| `x >= y: Integer x Integer -> Boolean`  | Returns `true` if `x` is greater or equal to `y`                                                           |
+| `x * y: Integer x Integer -> Integer`   | Returns the product of `x` and `y`                                                                         |
+| `x / y: Integer x Integer -> Integer`   | Returns the truncated division of `x` and `y`. Returns `0` and raises an error if `y = 0`                  |
+| `x % y: Integer x Integer -> Integer`   | Returns the remainder of the truncated division of `x` and `y`. Returns `0` and raises an error if `y = 0` |
+| `x + y: Integer x Integer -> Integer`   | Returns the sum of `x` and `y`                                                                             |
+| `x - y: Integer x Integer -> Integer`   | Returns the difference of `x` and `y`                                                                      |
+| `x = y: String x String -> Boolean`     | Returns `true` if the values of `x` and `y` are equal                                                      |
+| `x != y: String x String -> Boolean`    | Same as `NOT (x = y)`                                                                                      |
+| `x <> y: String x String -> Boolean`    | Same as `NOT (x = y)`                                                                                      |
 
 The modulo and divisions MUST follow the [truncated divisions definition][modulo-operation-wiki], that is:
 
@@ -297,26 +297,26 @@ The following tables show the built-in functions that MUST be supported by a CES
 
 #### 3.5.1. Casting and type checking
 
-| Definition                      | Semantics                                                                                                                        |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `INT(x): String -> Integer`     | Returns `x` converted to _Integer_, if possible. Otherwise, returns `0` and raises an error                                            |
+| Definition                      | Semantics                                                                                                                               |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `INT(x): String -> Integer`     | Returns `x` converted to _Integer_, if possible. Otherwise, returns `0` and raises an error                                             |
 | `BOOL(x): String -> Boolean`    | Returns `true` if the String value is `"true"`, `false` if the String value is `"false"`, otherwise returns `false` and raises an error |
-| `STRING(x): Integer -> String`  | Returns `x` converted to _String_                                                                                                      |
-| `STRING(x): Boolean -> String`  | Returns `x` converted to _String_                                                                                                      |
-| `IS_BOOL(x): String -> Boolean` | Returns `true` if `x` can be converted to _Boolean_ without raising an error, `false` otherwise                                        |
-| `IS_INT(x): String -> Boolean`  | Returns `true` if `x` can be converted to _Integer_ without raising an error, `false` otherwise                                        |
+| `STRING(x): Integer -> String`  | Returns `x` converted to _String_                                                                                                       |
+| `STRING(x): Boolean -> String`  | Returns `x` converted to _String_                                                                                                       |
+| `IS_BOOL(x): String -> Boolean` | Returns `true` if `x` can be converted to _Boolean_ without raising an error, `false` otherwise                                         |
+| `IS_INT(x): String -> Boolean`  | Returns `true` if `x` can be converted to _Integer_ without raising an error, `false` otherwise                                         |
 
 #### 3.5.2. Built-in String manipulation
 
-| Definition                                                 | Semantics                                                                                                                                                                                                                  |
-| ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `LENGTH(x): String -> Integer`                             | Returns the character length of the String `x`                                                                                                                                                                             |
-| `CONCAT(x1, x2, ...): String^n -> String`                  | Returns the concatenation of `x1` up to `xN`                                                                                                                                                                               |
-| `LOWER(x): String -> String`                               | Returns `x` in lowercase                                                                                                                                                                                                   |
-| `UPPER(x): String -> String`                               | Returns `x` in uppercase                                                                                                                                                                                                   |
-| `TRIM(x): String -> String`                                | Returns `x` with leading and trailing trimmed whitespaces                                                                                                                                                                  |
-| `LEFT(x, y): String x Integer -> String`                   | Returns a new string with the first `y` characters of `x`, or returns `x` if `LENGTH(x) <= y`. Returns `x` if `y < 0` and raises an error                                                                                  |
-| `RIGHT(x, y): String x Integer -> String`                  | Returns a new string with the last `y` characters of `x` or returns `x` if `LENGTH(x) <= y`. Returns `x` if `y < 0` and raises an error                                                                                    |
+| Definition                                                 | Semantics                                                                                                                                                                                                                   |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `LENGTH(x): String -> Integer`                             | Returns the character length of the String `x`                                                                                                                                                                              |
+| `CONCAT(x1, x2, ...): String^n -> String`                  | Returns the concatenation of `x1` up to `xN`                                                                                                                                                                                |
+| `LOWER(x): String -> String`                               | Returns `x` in lowercase                                                                                                                                                                                                    |
+| `UPPER(x): String -> String`                               | Returns `x` in uppercase                                                                                                                                                                                                    |
+| `TRIM(x): String -> String`                                | Returns `x` with leading and trailing trimmed whitespaces                                                                                                                                                                   |
+| `LEFT(x, y): String x Integer -> String`                   | Returns a new string with the first `y` characters of `x`, or returns `x` if `LENGTH(x) <= y`. Returns `x` if `y < 0` and raises an error                                                                                   |
+| `RIGHT(x, y): String x Integer -> String`                  | Returns a new string with the last `y` characters of `x` or returns `x` if `LENGTH(x) <= y`. Returns `x` if `y < 0` and raises an error                                                                                     |
 | `SUBSTRING(x, b, e): String x Integer x Integer -> String` | Returns the substring of `x` starting from index `b` (included) and ending with index `e` (excluded). Returns `SUBSTRING(x, b, LENGTH(x))` if `LENGTH(x) < e`. Returns `x` and raises an error if `b < 0 OR e < 0 OR e < b` |
 
 ### 3.6. Evaluation of the expression
