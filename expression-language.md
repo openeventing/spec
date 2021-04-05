@@ -181,7 +181,7 @@ The type system contains 3 _primitive_ types:
   32-bit, twos-complement encoding.
 - _Boolean_: A boolean value of "true" or "false".
 
-The [types defined in the CloudEvents specification][ce-type-system] (URI, URI Reference, and Timestamp) are represented as
+The types _URI_, _URI Reference_, and _Timestamp_ ([defined in the CloudEvents specification][ce-type-system]) are represented as
 _String_.
 
 The type system also includes _Set_, which is an unordered collection of _Strings_ of arbitrary length. This type can
