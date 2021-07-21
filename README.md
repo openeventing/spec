@@ -38,8 +38,9 @@ The following documents are available:
 | MQTT Protocol Binding         | [v1.0.1](https://github.com/cloudevents/spec/blob/v1.0.1/mqtt-protocol-binding.md)  |    [master](https://github.com/cloudevents/spec/blob/master/mqtt-protocol-binding.md)    |
 | NATS Protocol Binding         | [v1.0.1](https://github.com/cloudevents/spec/blob/v1.0.1/nats-protocol-binding.md)  |    [master](https://github.com/cloudevents/spec/blob/master/nats-protocol-binding.md)    |
 | WebSockets Protocol Binding   |                                        -                                        | [master](https://github.com/cloudevents/spec/blob/master/websockets-protocol-binding.md) |
-| Protobuf Event Format         |                                                                                 | [v1.0-rc1](https://github.com/cloudevents/spec/blob/master/protobuf-format.md)                                  |
+| Protobuf Event Format         |                                                                                 | [v1.0-rc1](https://github.com/cloudevents/spec/blob/master/protobuf-format.md)  
 | Web hook                      |      [v1.0.1](https://github.com/cloudevents/spec/blob/v1.0.1/http-webhook.md)      |        [master](https://github.com/cloudevents/spec/blob/master/http-webhook.md)         |
+|  XML Event Format |  - | [master][xml-format-working] |
 |                               |
 | **Additional Documentation:** |
 | CloudEvents Adapters          |                                        -                                        |          [master](https://github.com/cloudevents/spec/blob/master/adapters.md)           |
@@ -134,3 +135,6 @@ Periodically, the group may have in-person meetings that coincide with a major
 conference. Please see the
 [meeting minutes doc](https://docs.google.com/document/d/1OVF68rpuPK5shIHILK9JOqlZBbfe91RNzQ7u_P7YCDE/edit#)
 for any future plans.
+
+[xml-format-working]: https://github.com/cloudevents/spec/blob/master/xml-format.md
+[xml-format-latest]: https://github.com/cloudevents/spec/blob/master/xml-format.md
