@@ -43,3 +43,4 @@ information.
 - [Partitioning](extensions/partitioning.md)
 - [Sampling](extensions/sampledrate.md)
 - [Sequence](extensions/sequence.md)
+- [Signature](extensions/signature.md)
